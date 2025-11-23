@@ -22,10 +22,10 @@ def run_all_plots(bid_history,summary):
 
     comment out the plots you don't want to generate while testing.
     """
-    plot_bid_histogram(bid_history)
+    #plot_bid_histogram(bid_history)
     plot_bid_lines(bid_history)
-    plot_wins_per_agent(bid_history, summary)
-    plot_utility_per_bidder(summary)
+    #plot_wins_per_agent(bid_history, summary)
+    #plot_utility_per_bidder(summary)
 
 def plot_bid_histogram(bid_records):
     """
@@ -102,7 +102,6 @@ def plot_bid_lines(bid_history):
 
     plt.figure(figsize=(12, 6))
 
-    # Plot each agent as a separate line
     for agent_id, agent_df in df.groupby("agent_id"):
         plt.plot(
             agent_df["round"],
@@ -110,6 +109,25 @@ def plot_bid_lines(bid_history):
             marker='o',
             label=f"{agent_id} ({agent_df['agent_type'].iloc[0]})"
         )
+
+    # Overlay secret value for winners only
+    winner_secret_values = []
+    winner_rounds = []
+
+    for r in df["round"].unique():
+        round_df = df[df["round"] == r]
+        winner_row = round_df.loc[round_df["bid"].idxmax()]
+        winner_secret_values.append(winner_row["secret_value"])
+        winner_rounds.append(r)
+
+    plt.scatter(
+        winner_rounds,
+        winner_secret_values,
+        marker='x',
+        s=100,
+        color='red',
+        label="Winner Secret Value"
+    )
 
     plt.title("Bid Trajectories per Agent Across Auction Rounds")
     plt.xlabel("Auction Round")

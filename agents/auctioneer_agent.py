@@ -67,7 +67,8 @@ class AuctioneerAgent(BaseAgent):
                     "round": current_round,
                     "agent_id": bidder_id,
                     "agent_type": bid_type,
-                    "bid": bid_response.bid
+                    "bid": bid_response.bid,
+                    "secret_value": v
                 })
             else:
                 raise ValueError(f"Bidder {bidder_id} has no get_bid method.")
