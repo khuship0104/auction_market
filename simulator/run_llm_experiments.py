@@ -9,6 +9,8 @@ from core.models import AuctionConfig, SimulationSummary
 from agents.heuristic_bidder_agent import HeuristicBidderAgent
 from agents.strategic_bidder_agent import StrategicBidderAgent
 from agents.auctioneer_agent import AuctioneerAgent
+from viz.plots import run_all_plots
+
 
 
 def run_llm_experiments(
@@ -80,6 +82,7 @@ def run_llm_experiments(
         mean_utility_per_bidder=mean_utility_per_bidder,
         distribution_of_winners=distribution_of_winners,
     )
+    run_all_plots(auctioneer.bid_history, summary)
 
     return summary
 

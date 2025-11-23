@@ -23,6 +23,7 @@ class AuctioneerAgent(BaseAgent):
         self.config = config
         self.auction_id = auction_id
         self._round_counter = 0
+        self.bid_history = []  # To store bid records
 
     def get_bid(self, request: BidRequest) -> BidResponse:
         """
@@ -59,6 +60,15 @@ class AuctioneerAgent(BaseAgent):
                 bid_response: BidResponse = bidder.get_bid(req)
                 bid_responses[bidder_id] = bid_response
                 bids[bidder_id] = bid_response.bid
+
+                # Append each bidder's bid to bid_history for plotting purposes
+                bid_type = "Heuristic" if bidder.name.startswith("HeuristicBidder") else "Strategic"
+                self.bid_history.append({
+                    "round": current_round,
+                    "agent_id": bidder_id,
+                    "agent_type": bid_type,
+                    "bid": bid_response.bid
+                })
             else:
                 raise ValueError(f"Bidder {bidder_id} has no get_bid method.")
 
