@@ -8,6 +8,7 @@ from core.models import AuctionConfig, BidRequest, BidResponse, AuctionOutcome
 from core.value_sampler import sample_value_uniform_0_1
 from tools.payoff_calculator import compute_payoffs
 from .base_agent import BaseAgent
+import json
 
 
 class AuctioneerAgent(BaseAgent):
@@ -82,7 +83,41 @@ class AuctioneerAgent(BaseAgent):
 
         )
 
+        """
+        3) Generate and print LLM-written summary of the round
+        *If we dont want to see this output during testing, comment out the below two lines.*
+        """
+        llm_summary = self.generate_round_summary(outcome)        
+        print(f"\n Auctioneer Summary (Round {current_round}):\n{llm_summary}\n")
+
         self._round_counter += 1
 
-
         return outcome, bid_responses
+
+    def generate_round_summary(self, outcome: AuctionOutcome):
+        """
+        Generates an LLM-written human-readable summary for a single round, not entire auction.
+        """
+        prompt = f"""
+    You are the auctioneer overseeing a second-price sealed-bid auction.
+    Provide a concise, human-readable commentary for ROUND {outcome.round_index}.
+
+    Here is the full AuctionOutcome object:
+    {outcome}
+
+    Write a concise, human-readable 2–4 sentence analysis including:
+    - The winner and why they won
+    - How competitive the bidding was
+    - Whether bids appear truthful or shaded
+    - How the price compares to valuations
+    - Any notable strategic insights
+
+    Avoid JSON. Produce natural language only.
+    """
+
+        try:
+            summary = self.call_llm(prompt)
+        except Exception as e:
+            summary = f"[LLM summary unavailable due to error: {e}]"
+
+        return summary

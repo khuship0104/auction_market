@@ -22,10 +22,10 @@ def run_all_plots(bid_history,summary):
 
     comment out the plots you don't want to generate while testing.
     """
-    #plot_bid_histogram(bid_history)
+    plot_bid_histogram(bid_history)
     plot_bid_lines(bid_history)
-    #plot_wins_per_agent(bid_history, summary)
-    #plot_utility_per_bidder(summary)
+    plot_wins_per_agent(bid_history, summary)
+    plot_utility_per_bidder(summary)
 
 def plot_bid_histogram(bid_records):
     """
