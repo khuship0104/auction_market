@@ -28,6 +28,7 @@ class BidRequest(BaseModel):
     bidder_id: str
     private_value: float
     context: Optional[str] = None  # free-form description for the LLM agent
+    history: Optional[dict] = None
 
 
 class BidResponse(BaseModel):

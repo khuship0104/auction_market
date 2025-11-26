@@ -54,7 +54,7 @@ class AuctioneerAgent(BaseAgent):
                 auction_config=self.config,
                 bidder_id=bidder_id,
                 private_value=v,
-                history=None,  # or pass a real history object later
+                history=self.build_history(),  # or pass a real history object later
             )
 
             if hasattr(bidder, "get_bid"):
@@ -87,8 +87,8 @@ class AuctioneerAgent(BaseAgent):
         3) Generate and print LLM-written summary of the round
         *If we dont want to see this output during testing, comment out the below two lines.*
         """
-        llm_summary = self.generate_round_summary(outcome)        
-        print(f"\n Auctioneer Summary (Round {current_round}):\n{llm_summary}\n")
+        #llm_summary = self.generate_round_summary(outcome)        
+        #print(f"\n Auctioneer Summary (Round {current_round}):\n{llm_summary}\n")
 
         self._round_counter += 1
 
@@ -121,3 +121,34 @@ class AuctioneerAgent(BaseAgent):
             summary = f"[LLM summary unavailable due to error: {e}]"
 
         return summary
+
+    def build_history(self) -> dict:
+        """
+        Return a structured history of the last K rounds suitable for StrategicAgent LLM.
+        Only includes agent_id, agent_type, bid, and secret_value.
+        """
+        rounds_history = []
+
+        rounds_to_include = sorted({entry["round"] for entry in self.bid_history})
+
+        for r in rounds_to_include:
+            round_entries = [e for e in self.bid_history if e["round"] == r]
+            bids_dict = {e["agent_id"]: e["bid"] for e in round_entries}
+            secret_dict = {e["agent_id"]: e["secret_value"] for e in round_entries}
+
+            rounds_history.append({
+                "round_index": r,
+                "bids": bids_dict,
+                "secret_values": secret_dict  # optional
+            })
+
+        # Optional summary stats
+        avg_bid = sum(e["bid"] for e in self.bid_history) / len(self.bid_history) if self.bid_history else 0
+
+        return {
+            "rounds": rounds_history,
+            "summary_stats": {
+                "num_rounds": len(rounds_history),
+                "avg_bid": avg_bid
+            }
+        }
