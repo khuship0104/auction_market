@@ -25,6 +25,8 @@ class AuctioneerAgent(BaseAgent):
         self.auction_id = auction_id
         self._round_counter = 0
         self.bid_history = []  # To store bid records
+        self.summary_file_path = "auction_summaries.txt" # for writing the summaries to file
+
 
     def get_bid(self, request: BidRequest) -> BidResponse:
         """
@@ -85,10 +87,16 @@ class AuctioneerAgent(BaseAgent):
 
         """
         3) Generate and print LLM-written summary of the round
-        *If we dont want to see this output during testing, comment out the below two lines.*
+        Can either opt to print to console or write to a file.
+        Default is to write to a file.
         """
-        #llm_summary = self.generate_round_summary(outcome)        
-        #print(f"\n Auctioneer Summary (Round {current_round}):\n{llm_summary}\n")
+        llm_summary = self.generate_round_summary(outcome) # call func for LLM summary
+        #print(f"\n Auctioneer Summary (Round {current_round}):\n{llm_summary}\n") # uncomment to print to console
+        write_mode = "w" if current_round == 0 else "a" # clear write file on first round
+        with open(self.summary_file_path, write_mode, encoding="utf-8") as f:
+            f.write(f"Auctioneer Summary (Round {current_round}):\n")
+            f.write(llm_summary)
+            f.write("\n\n")
 
         self._round_counter += 1
 
