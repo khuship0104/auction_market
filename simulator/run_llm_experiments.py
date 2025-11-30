@@ -60,7 +60,7 @@ def run_llm_experiments(
         wins_count[winner] += 1
 
         # accumulate payoffs per bidder
-        for bidder_id, u in outcome.values.items():
+        for bidder_id, u in outcome.payoffs.items():
             total_utility[bidder_id] += u
 
     # --- 4) Aggregate stats into SimulationSummary ---
