@@ -59,7 +59,7 @@ class HeuristicBidderAgent(BaseAgent):
                 round_index=round_index,
                 bidder_id=self.bidder_id,
                 bid=fallback_bid,
-                reasoning=f"Used fallback shading rule.",
+                reasoning=f"Heuristic bidder with shading factor {self.shading_factor}.",
                 raw_llm_text=None,
             )
 

@@ -56,14 +56,14 @@ class AuctioneerAgent(BaseAgent):
                 auction_config=self.config,
                 bidder_id=bidder_id,
                 private_value=v,
-                history=self.build_history(),  # or pass a real history object later
+                history=self.build_history(exclude_round=current_round),
             )
 
             if hasattr(bidder, "get_bid"):
                 bid_response: BidResponse = bidder.get_bid(req)
                 bid_responses[bidder_id] = bid_response
                 bids[bidder_id] = bid_response.bid
-
+                print(bid_response.reasoning)
                 # Optional: print bid and reasoning for debugging for strategic agents
                 debug_response = False
                 if bidder.name.startswith("HeuristicBidder") and debug_response:
@@ -79,7 +79,8 @@ class AuctioneerAgent(BaseAgent):
                     "agent_id": bidder_id,
                     "agent_type": bid_type,
                     "bid": bid_response.bid,
-                    "secret_value": v
+                    "secret_value": v,
+
                 })
             else:
                 raise ValueError(f"Bidder {bidder_id} has no get_bid method.")
@@ -138,16 +139,16 @@ class AuctioneerAgent(BaseAgent):
 
         return summary
 
-    def build_history(self) -> dict:
+    def build_history(self, exclude_round: int = None) -> dict:
         """
-        Return a structured history of the last K rounds suitable for StrategicAgent LLM.
-        Only includes agent_id, agent_type, bid, and secret_value.
+        Return a structured history, optionally excluding a specific round.
         """
         rounds_history = []
-
         rounds_to_include = sorted({entry["round"] for entry in self.bid_history})
-
+        
         for r in rounds_to_include:
+            if exclude_round is not None and r == exclude_round:
+                continue
             round_entries = [e for e in self.bid_history if e["round"] == r]
             bids_dict = {e["agent_id"]: e["bid"] for e in round_entries}
             secret_dict = {e["agent_id"]: e["secret_value"] for e in round_entries}
@@ -155,16 +156,12 @@ class AuctioneerAgent(BaseAgent):
             rounds_history.append({
                 "round_index": r,
                 "bids": bids_dict,
-                "secret_values": secret_dict  # optional
+                "secret_values": secret_dict
             })
-
-        # Optional summary stats
-        avg_bid = sum(e["bid"] for e in self.bid_history) / len(self.bid_history) if self.bid_history else 0
 
         return {
             "rounds": rounds_history,
             "summary_stats": {
-                "num_rounds": len(rounds_history),
-                "avg_bid": avg_bid
+                "num_rounds": len(rounds_history)
             }
         }

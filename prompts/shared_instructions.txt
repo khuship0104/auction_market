@@ -8,6 +8,6 @@ General rules:
 For bidders, the JSON MUST have:
 {
   "bidder_id": "...",
-  "bid_amount": <float>,
-  "reasoning_summary": "short explanation of the reasoning"
+  "bid": <float>,
+  "reasoning": "short explanation of the reasoning"
 }
