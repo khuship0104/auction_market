@@ -15,7 +15,7 @@
 
     3. Heuristic Bidder Agent
         - shading rule: bids a simple fraction of a value (bid = 0.8 * private_value)
-        - optionally can use LLM to generate reasoning (slower)
+            - LLM is able to adjust this factor based on auction history, explaining why.
         - represents a non-strategic, rule-of-thumb bidder
 
     4. Base Agent
@@ -118,8 +118,8 @@
     This ensures the LLM is not just guessing, but is grounded in real calculations.
 
 # WHAT'S LEFT TO DO
-    1. Only StrategicBidderAgent is LLM based (for speed purposes).
-    2. Add plots/visualizations
-    3. improve the prompts
-    4. add history so bidders can adjust behavior over multiple rounds
-    5. jupyter notebook
+    1. Add plots/visualizations
+    2. improve the prompts
+    3. add history so bidders can adjust behavior over multiple rounds
+    4. jupyter notebook
+
