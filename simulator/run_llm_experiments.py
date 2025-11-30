@@ -36,7 +36,7 @@ def run_llm_experiments(
     bidders = [
         HeuristicBidderAgent("B1", shading_factor=0.8, use_llm=use_llm_for_heuristics),
         StrategicBidderAgent("B2", use_llm=True),
-        HeuristicBidderAgent("B3", shading_factor=0.9, use_llm=use_llm_for_heuristics),
+        HeuristicBidderAgent("B3", shading_factor=0.7, use_llm=use_llm_for_heuristics),
     ]
 
     auctioneer = AuctioneerAgent(config=config)
