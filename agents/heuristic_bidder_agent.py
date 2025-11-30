@@ -40,13 +40,25 @@ class HeuristicBidderAgent(BaseAgent):
 
         bidder_id: "{self.bidder_id}"
         private_value: {request.private_value}
-        based on {history_text}, use adjust_shading_factor to decide new shading factor if needed.
-        fallback_bid (from shading rule): {fallback_bid} (use this ONLY if you choose not to modify)"
+        - current_shading_factor: {self.shading_factor}
+        - fallback_bid (using current factor): {fallback_bid}
+
+        Analyze carefully the history of past rounds, with winner_id and payoffs included:
+        {history_text}
+
+        Based on your performance in past rounds (wins, losses, payoffs), decide:
+        1. Should you adjust your shading factor?
+        2. What bid should you submit?
+        3. Explain your reasoning for both decisions.
+
+        Return JSON with:
+        - "bid": your bid amount
+        - "new_shading_factor": your adjusted factor (or keep current if no change)
+        - "reasoning": explanation of your decision
         """.strip()
 
     def get_bid(self, request: BidRequest) -> BidResponse:
         # Always define a deterministic fallback
-        self.shading_factor = self.adjust_shading_from_history(request.history)
         fallback_bid = self.shading_factor * request.private_value
 
         if not self.use_llm:
@@ -82,10 +94,18 @@ class HeuristicBidderAgent(BaseAgent):
                 raw_llm_text=None,
             )
         #print(raw_text)
-        return self.parse_bid_response(
-            request,
-            raw_text
-        )
+        response = self.parse_bid_response(request, raw_text)
+
+        # Extract and apply new shading factor if provided
+        try:
+            data = self._extract_json(raw_text)
+            if "new_shading_factor" in data:
+                new_factor = float(data["new_shading_factor"])
+                self.shading_factor = min(max(new_factor, 0.7), 0.95)  # clamp to bounds
+        except Exception:
+            print("Failed to extract new shading factor from LLM response.")  # If extraction fails, keep current factor
+
+        return response
 
         '''return self.parse_bid_response(
             self=self,
@@ -94,31 +114,3 @@ class HeuristicBidderAgent(BaseAgent):
             bidder_id=self.bidder_id,
             reasoning_summary=f"Heuristic bidder with shading factor {self.shading_factor}.",
         )'''
-
-    def adjust_shading_from_history(self, history: Optional[dict]) -> float:
-        """
-        Returns an adjusted shading factor based on past auction history.
-        Default is self.shading_factor if no change needed.
-        """
-        if not history or "rounds" not in history or len(history["rounds"]) == 0:
-            return self.shading_factor  # no history, keep original
-
-        # Construct a simple prompt for LLM or rule-based adjustment
-        prompt = f"""
-        You are a heuristic bidder.
-        Current shading factor: {self.shading_factor}
-        History of past rounds:
-        {json.dumps(history, indent=2)}
-
-        Suggest a new shading factor between 0.7 and 0.95.
-        Return only a number.
-        """
-
-        try:
-            new_shade_text = self.call_llm(prompt)
-            new_shade = float(new_shade_text.strip())
-            # clamp to reasonable bounds
-            new_shade = min(max(new_shade, 0.7), 0.95)
-            return new_shade
-        except Exception:
-            return self.shading_factor  # fallback if LLM fails

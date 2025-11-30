@@ -63,7 +63,7 @@ class AuctioneerAgent(BaseAgent):
                 bid_response: BidResponse = bidder.get_bid(req)
                 bid_responses[bidder_id] = bid_response
                 bids[bidder_id] = bid_response.bid
-                print(bid_response.reasoning)
+
                 # Optional: print bid and reasoning for debugging for strategic agents
                 debug_response = False
                 if bidder.name.startswith("HeuristicBidder") and debug_response:
@@ -93,6 +93,11 @@ class AuctioneerAgent(BaseAgent):
             round_index=current_round,
 
         )
+
+        # Add winner_id to each bid_history entry for this round
+        for entry in self.bid_history:
+            if entry["round"] == current_round:
+                entry["winner_id"] = outcome.winner_id
 
         """
         3) Generate and print LLM-written summary of the round
@@ -152,11 +157,13 @@ class AuctioneerAgent(BaseAgent):
             round_entries = [e for e in self.bid_history if e["round"] == r]
             bids_dict = {e["agent_id"]: e["bid"] for e in round_entries}
             secret_dict = {e["agent_id"]: e["secret_value"] for e in round_entries}
+            winner_id = round_entries[0].get("winner_id") if round_entries else None
 
             rounds_history.append({
                 "round_index": r,
                 "bids": bids_dict,
-                "secret_values": secret_dict
+                "secret_values": secret_dict,
+                "winner_id": winner_id,
             })
 
         return {
