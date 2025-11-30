@@ -74,14 +74,19 @@ class AuctioneerAgent(BaseAgent):
 
                 # Append each bidder's bid to bid_history for plotting purposes
                 bid_type = "Heuristic" if bidder.name.startswith("HeuristicBidder") else "Strategic"
-                self.bid_history.append({
+                bid_record = {
                     "round": current_round,
                     "agent_id": bidder_id,
                     "agent_type": bid_type,
                     "bid": bid_response.bid,
                     "secret_value": v,
-
-                })
+                }
+                
+                # Capture shading factor for heuristic agents
+                if bid_type == "Heuristic" and hasattr(bidder, "shading_factor"):
+                    bid_record["shading_factor"] = bidder.shading_factor
+                
+                self.bid_history.append(bid_record)
             else:
                 raise ValueError(f"Bidder {bidder_id} has no get_bid method.")
 

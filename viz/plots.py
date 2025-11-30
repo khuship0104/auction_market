@@ -15,6 +15,7 @@ def run_all_plots(bid_history,summary):
             - "agent_id": str
             - "agent_type": str
             - "bid": float
+            - "shading_factor": float (for heuristic agents)
 
     summary : SimulationSummary
         Each summary contains:
@@ -24,8 +25,11 @@ def run_all_plots(bid_history,summary):
     """
     plot_bid_histogram(bid_history)
     plot_bid_lines(bid_history)
-    plot_wins_per_agent(bid_history, summary)
-    plot_utility_per_bidder(summary)
+    plot_shading_factor_evolution(bid_history)
+
+    """These two plots are redundant since we print the summary stats already, might have future use though"""
+    #plot_wins_per_agent(bid_history, summary)
+    #plot_utility_per_bidder(summary)
 
 def plot_bid_histogram(bid_records):
     """
@@ -135,6 +139,37 @@ def plot_bid_lines(bid_history):
     plt.xticks(df["round"].unique())
     plt.grid(True, linestyle="--", alpha=0.6)
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.tight_layout()
+    plt.show()
+
+def plot_shading_factor_evolution(bid_history):
+    """
+    Line plot showing how heuristic agents' shading factors change over rounds.
+    """
+    df = pd.DataFrame(bid_history)
+    
+    # Filter to only heuristic agents with shading factor data
+    heuristic_df = df[(df["agent_type"] == "Heuristic") & (df["shading_factor"].notna())]
+    
+    plt.figure(figsize=(12, 6))
+    
+    for agent_id, agent_df in heuristic_df.groupby("agent_id"):
+        plt.plot(
+            agent_df["round"],
+            agent_df["shading_factor"],
+            marker='o',
+            linewidth=2,
+            markersize=6,
+            label=f"{agent_id}"
+        )
+    
+    plt.title("Shading Factor Evolution Over Auction Rounds (Heuristic Agents)")
+    plt.xlabel("Auction Round")
+    plt.ylabel("Shading Factor")
+    plt.ylim([0.65, 1.0])
+    plt.xticks(heuristic_df["round"].unique())
+    plt.grid(True, linestyle="--", alpha=0.6)
+    plt.legend(loc='best')
     plt.tight_layout()
     plt.show()
 

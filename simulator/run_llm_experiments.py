@@ -34,11 +34,9 @@ def run_llm_experiments(
     )
 
     bidders = [
-        #HeuristicBidderAgent("B1", shading_factor=0.8, use_llm=use_llm_for_heuristics),
-        HeuristicBidderAgent("B1", use_llm=True),
+        HeuristicBidderAgent("B1", shading_factor=0.8, use_llm=use_llm_for_heuristics),
         StrategicBidderAgent("B2", use_llm=True),
-        #HeuristicBidderAgent("B3", shading_factor=0.9, use_llm=use_llm_for_heuristics),
-        HeuristicBidderAgent("B3", use_llm=True),
+        HeuristicBidderAgent("B3", shading_factor=0.9, use_llm=use_llm_for_heuristics),
     ]
 
     auctioneer = AuctioneerAgent(config=config)
@@ -99,7 +97,7 @@ def main():
 
     summary = run_llm_experiments(
         num_rounds=num_rounds,
-        use_llm_for_heuristics=False,
+        use_llm_for_heuristics=True,
     )
 
     # Header
