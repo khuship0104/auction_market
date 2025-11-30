@@ -8,7 +8,6 @@ from core.models import AuctionConfig, BidRequest, BidResponse, AuctionOutcome
 from core.value_sampler import sample_value_uniform_0_1
 from tools.payoff_calculator import compute_payoffs
 from .base_agent import BaseAgent
-import json
 
 
 class AuctioneerAgent(BaseAgent):
@@ -65,9 +64,9 @@ class AuctioneerAgent(BaseAgent):
                 bids[bidder_id] = bid_response.bid
 
                 # Optional: print bid and reasoning for debugging for strategic agents
-                debug_response = False
-                if bidder.name.startswith("HeuristicBidder") and debug_response:
-                    print(f"[Heuristic Agent {bidder_id}] Bid: {bid_response.bid}")
+                debug_response = True
+                if bidder.name.startswith("Strat") and debug_response:
+                    print(f"Strategic Agent {bidder_id}] Bid: {bid_response.bid}")
                     #print(f"  Reasoning: {bid_response.reasoning}")
                     # (Optional) print full raw LLM output
                     print(f"  Raw LLM Output:\n{bid_response.raw_text}\n")

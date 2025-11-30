@@ -27,9 +27,9 @@ def run_all_plots(bid_history,summary):
     plot_bid_lines(bid_history)
     plot_shading_factor_evolution(bid_history)
 
-    """These two plots are redundant since we print the summary stats already, might have future use though"""
+    """These two plots may be redundant, can be commented out"""
     #plot_wins_per_agent(bid_history, summary)
-    #plot_utility_per_bidder(summary)
+    plot_utility_per_bidder(summary)
 
 def plot_bid_histogram(bid_records):
     """

@@ -11,7 +11,7 @@ class AuctionConfig(BaseModel):
     min_value: float = 0.0
     max_value: float = 1.0
     reserve_price: float = 0.0
-    mechanism: str = "second_price"  # e.g. "second_price", "first_price"
+    auction_type: str = "second_price"  # e.g. "second_price", "first_price"
     value_distribution: str = "uniform"  # descriptive label only
     random_seed: Optional[int] = None
 

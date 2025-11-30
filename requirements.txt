@@ -2,3 +2,5 @@ pydantic
 python-dotenv
 matplotlib
 openai
+seaborn
+pandas
