@@ -64,6 +64,14 @@ class AuctioneerAgent(BaseAgent):
                 bid_responses[bidder_id] = bid_response
                 bids[bidder_id] = bid_response.bid
 
+                # Optional: print bid and reasoning for debugging for strategic agents
+                debug_response = False
+                if bidder.name.startswith("HeuristicBidder") and debug_response:
+                    print(f"[Heuristic Agent {bidder_id}] Bid: {bid_response.bid}")
+                    #print(f"  Reasoning: {bid_response.reasoning}")
+                    # (Optional) print full raw LLM output
+                    print(f"  Raw LLM Output:\n{bid_response.raw_text}\n")
+
                 # Append each bidder's bid to bid_history for plotting purposes
                 bid_type = "Heuristic" if bidder.name.startswith("HeuristicBidder") else "Strategic"
                 self.bid_history.append({
