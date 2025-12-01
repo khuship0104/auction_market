@@ -148,9 +148,13 @@ def plot_shading_factor_evolution(bid_history):
     """
     df = pd.DataFrame(bid_history)
     
-    # Filter to only heuristic agents with shading factor data
-    heuristic_df = df[(df["agent_type"] == "Heuristic") & (df["shading_factor"].notna())]
-    
+    try:
+        # Filter to only heuristic agents with shading factor data
+        heuristic_df = df[(df["agent_type"] == "Heuristic") & (df["shading_factor"].notna())]
+    except KeyError:
+        print("No shading factor data available to plot.")
+        return
+
     plt.figure(figsize=(12, 6))
     
     for agent_id, agent_df in heuristic_df.groupby("agent_id"):

@@ -24,8 +24,7 @@ class AuctioneerAgent(BaseAgent):
         self.auction_id = auction_id
         self._round_counter = 0
         self.bid_history = []  # To store bid records
-        self.summary_file_path = "auction_summaries.txt" # for writing the summaries to file
-
+        #self.summary_file_path = "auction_summaries.txt" # for writing the summaries to file, moved to full scenario output files
 
     def get_bid(self, request: BidRequest) -> BidResponse:
         """
@@ -33,19 +32,23 @@ class AuctioneerAgent(BaseAgent):
         """
         raise NotImplementedError("Auctioneer does not implement get_bid.")
 
-    def run_round(self, bidders: Sequence[BaseAgent]) -> AuctionOutcome:
+    def run_round(self, bidders: Sequence[BaseAgent], log_file: str = None) -> tuple[AuctionOutcome, dict[str, BidResponse]]:
         """
         Run a single sealed-bid second-price auction round.
+        
+        Args:
+            bidders: List of bidder agents
+            log_file: Optional file path to log round details
         """
         bids: dict[str, float] = {}
         values: dict[str, float] = {}
 
         current_round = self._round_counter
-
+        bid_responses: dict[str, BidResponse] = {}
+        
         # 1) Sample private values and get bids
         for bidder in bidders:
             bidder_id = getattr(bidder, "bidder_id", bidder.name)
-            bid_responses: dict[str, BidResponse] = {}
             v = sample_value_uniform_0_1()
             values[bidder_id] = v
 
@@ -62,14 +65,6 @@ class AuctioneerAgent(BaseAgent):
                 bid_response: BidResponse = bidder.get_bid(req)
                 bid_responses[bidder_id] = bid_response
                 bids[bidder_id] = bid_response.bid
-
-                # Optional: print bid and reasoning for debugging for strategic agents
-                debug_response = False
-                if bidder.name.startswith("Strat") and debug_response:
-                    print(f"Strategic Agent {bidder_id}] Bid: {bid_response.bid}")
-                    #print(f"  Reasoning: {bid_response.reasoning}")
-                    # (Optional) print full raw LLM output
-                    print(f"  Raw LLM Output:\n{bid_response.raw_text}\n")
 
                 # Append each bidder's bid to bid_history for plotting purposes
                 bid_type = "Heuristic" if bidder.name.startswith("HeuristicBidder") else "Strategic"
@@ -95,7 +90,6 @@ class AuctioneerAgent(BaseAgent):
             values=values,
             auction_id=self.auction_id,
             round_index=current_round,
-
         )
 
         # Add winner_id to each bid_history entry for this round
@@ -103,20 +97,13 @@ class AuctioneerAgent(BaseAgent):
             if entry["round"] == current_round:
                 entry["winner_id"] = outcome.winner_id
 
-        """
-        3) Generate and print LLM-written summary of the round
-        Can either opt to print to console or write to a file.
-        Default is to write to a file.
-        """
+
         llm_summary = self.generate_round_summary(outcome) # call func for LLM summary
-        #print(f"\n Auctioneer Summary (Round {current_round}):\n{llm_summary}\n") # uncomment to print to console
-        write_mode = "w" if current_round == 0 else "a" # clear write file on first round
-        with open(self.summary_file_path, write_mode, encoding="utf-8") as f:
-            f.write(f"Auctioneer Summary (Round {current_round}):\n")
-            f.write(llm_summary)
-            f.write("\n\n")
 
         self._round_counter += 1
+
+        # last step is logging round details in output file
+        self.write_round_log(log_file, current_round, bidders, bid_responses, outcome, llm_summary)
 
         return outcome, bid_responses
 
@@ -176,3 +163,25 @@ class AuctioneerAgent(BaseAgent):
                 "num_rounds": len(rounds_history)
             }
         }
+
+    def write_round_log(self, log_file: str, round_num: int, bidders: Sequence[BaseAgent], bid_responses: dict[str, BidResponse], outcome: AuctionOutcome, llm_summary: str) -> None:
+        """Write one round's decisions and outcome to log file."""
+        mode = "w" if round_num == 0 else "a" # overwrite log file so each sim is fresh
+        
+        with open(log_file, mode, encoding="utf-8") as f:
+            if round_num == 0:
+                f.write("AUCTION SIMULATION LOG\n" + "="*60 + "\n\n")
+            
+            f.write(f"--- ROUND {round_num} ---\n")
+            
+            # Log each bidder's bid and reasoning
+            for bidder in bidders:
+                bidder_id = getattr(bidder, "bidder_id", bidder.name)
+                if bidder_id in bid_responses:
+                    response = bid_responses[bidder_id]
+                    f.write(f"{bidder_id}: bid={response.bid:.4f}\n")
+                    if response.reasoning:
+                        f.write(f"  reasoning: {response.reasoning}\n")
+            
+            f.write(f"Winner: {outcome.winner_id}, Clearing Price: {outcome.clearing_price:.4f}\n")
+            f.write(f"Summary: {llm_summary}\n\n") # auctioneer agents summary
