@@ -1,0 +1,270 @@
+Auctioneer Summary (Round 0):
+### ROUND 0 Auction Commentary
+
+In this round of the second-price sealed-bid auction (Auction ID: auction_001), bidder B1 emerged as the winner, placing the highest bid at approximately 0.75. However, because this is a second-price auction, B1 only pays the clearing price of 0.55, which equates to the second-highest bid from B2.
+
+#### Results:
+- **Winner**: B1
+- **Clearing Price**: 0.55
+- **Bids**: 
+  - B1: 0.75
+  - B2: 0.55
+  - B3: 0.069
+
+B1's payoff from this round is a profit of approximately 0.39, derived from the difference between their value of 0.94 and the clearing price of 0.55. Meanwhile, B2 and B3, who did not win, receive no payoff. 
+
+This round has successfully demonstrated the mechanics of a second-price auction, where the winner pays the second-highest bid, ensuring competitive bidding while maximizing seller revenue.
+
+Auctioneer Summary (Round 1):
+### ROUND 1 Commentary
+
+In the first round of our auction, bidder B2 emerged victorious with a winning bid of $0.75. However, since this is a second-price sealed-bid auction, B2 will only pay the clearing price of $0.5088. 
+
+Here's a quick breakdown:
+
+- **Winner:** B2
+- **Clearing Price:** $0.5088
+- **Bids:**
+  - B1: $0.5088
+  - B2: $0.75 (highest bid)
+  - B3: $0.0556
+
+- **Values:**
+  - B1: $0.6360
+  - B2: $0.7068
+  - B3: $0.0695
+
+- **Payoffs:**
+  - B1: $0.0 (bid below clearing price)
+  - B2: $0.1980 (value minus payment)
+  - B3: $0.0 (bid below clearing price)
+
+B2 enjoys a positive payoff of $0.1980, reflecting the difference between their value for the item and the price they actually pay. Meanwhile, B1 and B3 did not earn anything as their bids were below the clearing price.
+
+Auctioneer Summary (Round 2):
+**Round 2 Commentary:**
+
+In the second round of our auction, bidder B3 emerged as the winner with a bid of approximately 0.68. However, the winning price, set at 0.58, reflects a second-price auction format where B3 pays the second-highest bid rather than their own.
+
+Bidders B1 and B2 placed bids of about 0.08 and 0.58, respectively. Despite B2's bid matching the clearing price, it was insufficient to win the auction. Neither B1 nor B2 gained any payoff, as their bids did not secure them the item.
+
+B3, on the other hand, achieved a payoff of approximately 0.27, calculated from the difference between their value of 0.85 and the clearing price of 0.58. 
+
+Overall, this round demonstrated the strategic nature of bidding, with B3 effectively securing the item while capitalizing on the second-price structure, resulting in a favorable outcome for them.
+
+Auctioneer Summary (Round 3):
+### ROUND 3 Commentary
+
+In the third round of our auction, bidder **B3** emerged as the winner with a strong bid of **0.739**. Since this is a second-price auction, B3 will pay the second-highest bid, which was submitted by bidder **B2** at **0.17**. 
+
+The clearing price for this round is set at **0.17**, generating a total revenue of **0.17** for the auctioneer. Bidder **B1**, with a bid of approximately **0.049**, did not win and has no payoff in this round. 
+
+Overall, Bidder B3 realized a payoff of around **0.754**, reflecting the strength of their valuation at **0.924** compared to the clearing price. Bidders B1 and B2 both left this round without any payoffs since their bids did not surpass B3's. 
+
+This round showcases the competitive nature of the bidding, particularly how B3 leveraged their higher valuation effectively to secure the win while only having to pay the price set by B2's bid.
+
+Auctioneer Summary (Round 4):
+### Auction Round 4 Commentary
+
+In Round 4 of our auction, bidder B2 has emerged as the winner with a bid of 0.75. The clearing price, set at approximately 0.6135, dictates the amount B2 will pay for the item. 
+
+Let's break down the bids:
+
+- **B1** submitted a bid of about 0.1936, well below the clearing price, resulting in a payoff of 0.0.
+- **B2**, our winning bidder, had the highest bid and will receive a payoff of approximately 0.1657 after accounting for the cost.
+- **B3** bid 0.6135, which matched the clearing price but fell short of winning, resulting in no payoff.
+
+In summary, B2's strategic bidding has secured victory, yielding a positive payoff, while both B1 and B3 will not receive any payoff in this round. The auction continues to demonstrate competitive dynamics among the bidders!
+
+Auctioneer Summary (Round 5):
+**Round 5 Commentary**
+
+In this round of our second-price sealed-bid auction, bidder B2 emerged as the winner with a bid of 0.55. The clearing price, set at 0.3848, is the amount B2 will pay, which is the second-highest bid submitted. 
+
+Bidder B1 submitted the lowest bid at 0.1825 and, unfortunately, did not secure any payoff. B3, coming in with a bid of 0.3848, matched the clearing price but still did not win. 
+
+In terms of value, B2’s bid surpassed its personal value of 0.5199, resulting in a payoff of approximately 0.1351 after the clearing price deduction. B3 and B1 did not gain any payoff. 
+
+Overall, it was a competitive round, illustrating the dynamic nature of bidding in this auction format!
+
+Auctioneer Summary (Round 6):
+**Round 6 Commentary:**
+
+In this exciting round of the auction, contestant B3 emerged as the winner with a bid of 0.784, decisively outbidding the competition. B2 submitted a bid of 0.5, which matched the clearing price, while B1 bid slightly lower at 0.490. 
+
+The clearing price was set at 0.5, determining the final amount required to secure the win. As a result, B3 pays this clearing price of 0.5, leading to a substantial payoff of approximately 0.48 given their valuation of around 0.98. 
+
+Notably, B1 and B2 ended up with a payoff of 0.0, as their bids did not secure the auction. Overall, this round showcased strategic bidding, particularly from B3, who capitalized on their higher valuation to claim victory.
+
+Auctioneer Summary (Round 7):
+**ROUND 7 Commentary:**
+
+In this round of our second-price sealed-bid auction, player B2 emerged victorious with the highest bid of 0.76. However, the clearing price settled at approximately 0.6222, which is the second-highest bid made by B3.
+
+- **Bidders Overview:**
+  - **B1** bid a mere 0.0032, significantly below the others and received a payoff of 0.0, indicating that their bid did not compete.
+  - **B2**'s payoff is 0.1979, demonstrating a solid profit margin as their value was 0.8202.
+  - **B3**, bidding exactly at the clearing price, also received no payoff since their bid matched the market price.
+
+- **Revenue Report:**
+  The auction revenue generated from this round stands at 0.6222, reflective of the competitive bidding environment. 
+
+Player B2 capitalized on their understanding of the auction dynamics, successfully winning while strategically lowering their payment to just above B3's bid. This round exemplifies the tactical depth inherent in sealed-bid auctions.
+
+Auctioneer Summary (Round 8):
+### ROUND 8 Commentary
+
+In this round of the auction, **Bidder B1** emerged victorious, securing the item with a winning bid of **0.7671**. The clearing price was set at **0.5**, resulting in a revenue of **0.5** for the auctioneer.
+
+**Bidder B1** demonstrated strong demand, as their value for the item was **0.9589**, leading to a payoff of **0.4589** after accounting for the winning price. **Bidder B2** had a bid equal to the clearing price but placed it only at **0.5**, which did not result in a payoff. As for **Bidder B3**, their bid of **0.1409** was significantly lower than the others, leading to no payoff as well.
+
+Overall, this round solidified B1's position as a strong competitor in the auction.
+
+Auctioneer Summary (Round 9):
+**Round 9 Summary:**
+
+In this round of the auction, **Bidder B2** emerged as the winner with a bid of **0.42**. However, due to the rules of the second-price auction, B2 will pay the **clearing price** of **0.3462**. This price reflects the highest losing bid.
+
+Here's how the bidders fared:
+
+- **Bidder B1** bid **0.3462**, which matches the clearing price, resulting in no payoff as they did not win.
+- **Bidder B2**, despite having the highest bid, earned a payoff of approximately **0.031** after paying the clearing price, reflecting a value greater than the price paid.
+- **Bidder B3** bid **0.2569** and did not win, resulting in a payoff of **0.0**.
+
+Overall, the auction generated a revenue of **0.3462**, while B2 realizes a modest payoff from the transaction.
+
+Auctioneer Summary (Round 10):
+**ROUND 10 Commentary:**
+
+In this round of the auction, participant B3 emerged as the winner with a bid of approximately 0.445. The clearing price was set at 0.42, which means B3 pays this amount despite their higher bid, typical of a second-price sealed-bid auction.
+
+Here's the breakdown:
+- **Bids**: 
+  - B1: 0.048
+  - B2: 0.42
+  - **B3 (winner)**: 0.445
+
+- **Values**:
+  - B1: 0.060
+  - B2: 0.004
+  - **B3**: 0.556
+
+- **Payoffs**:
+  - B1: 0.0 (did not win)
+  - B2: 0.0 (did not win)
+  - **B3**: 0.136 (value minus the price paid)
+
+B3 gained a positive payoff of 0.136, reflecting their valuation of the item, while B1 and B2 walked away with no winnings this round. The auction continues to showcase strategic bidding with B3 maximizing their surplus.
+
+Auctioneer Summary (Round 11):
+**Round 11 Auction Commentary**
+
+In this round, we welcomed bids from three participants: B1, B2, and B3. The bids were as follows:
+- B1 submitted a bid of **0.4168**.
+- B2 was the highest bidder at **0.75**. 
+- B3 offered **0.2769**.
+
+B2 emerged as the winner and will pay the clearing price of **0.4168**, which is the second-highest bid. This means B2's payoff is calculated at **0.3239**, reflecting the difference between their value and the price they pay.
+
+B1 and B3, unfortunately, did not secure a win and thus received no payoff this round. Overall, it was an engaging round, showcasing B2's strong valuation and bidding strategy.
+
+Auctioneer Summary (Round 12):
+### ROUND 12 Commentary
+
+In this round of our second-price sealed-bid auction, we saw a competitive showdown. **Bidder B2** emerged as the winner with a bid of **$0.25**, which comfortably surpassed the other two bids. However, the price paid is determined by the second-highest bid, which was **Bidder B1** at **$0.1448**.
+
+With a clearing price set at **$0.1448**, **Bidder B2** achieves a payoff of approximately **$0.1977**, demonstrating a successful strategy that capitalized on their higher valuation of **$0.3425**. In contrast, **Bidders B1** and **B3** both did not receive any payoff, with B1's bid falling short of the winning price, and B3's bid of **$0.0232** not being competitive.
+
+Overall, ROUND 12 showcased strategic bidding, with B2's decision to bid significantly above their competitors yielding them a valuable payoff despite the auction's format.
+
+Auctioneer Summary (Round 13):
+**Round 13 Auction Commentary:**
+
+In the latest round of our auction, Participant B3 emerged as the winner with a strong bid of 0.4297. However, as this is a second-price auction, they will pay the clearing price of 0.42, ensuring a profit margin. 
+
+Bids from other participants included B1 at 0.1083 and B2 at the clearing price of 0.42, both of which did not win and thus receive no payoffs. B3, on the other hand, valued the item at 0.5371, securing a payoff of approximately 0.1171 after subtracting the clearing price.
+
+Overall, this round demonstrated competitive bidding, but only B3 realized any gains.
+
+Auctioneer Summary (Round 14):
+### ROUND 14 Commentary
+
+In this thrilling round of our second-price sealed-bid auction, **Bidder B1** has emerged victorious with a winning bid of **0.7949**. The clearing price has been set at **0.58**, which means B1 will pay this price, resulting in a **payoff of approximately 0.4136**.
+
+### Bidders Breakdown:
+- **B1** (Winner): Bid = **0.7949**, Value = **0.9936**, Payoff = **0.4136**
+- **B2**: Bid = **0.58**, Value = **0.6370**, Payoff = **0.0** (no payoff since they lost)
+- **B3**: Bid = **0.4219**, Value = **0.5274**, Payoff = **0.0** (no payoff since they lost)
+
+### Summary:
+B1 capitalized on their knowledge of the auction dynamics, submitting a strong bid well above the clearing price while still reaping a substantial payoff. B2's bid exactly matched the clearing price, resulting in no gain, while B3's lower bid left them out of contention in this round. Overall, it was an exciting round with a clear winner and significant insights into bidding strategies!
+
+Auctioneer Summary (Round 15):
+### ROUND 15 Auction Commentary
+
+In Round 15 of auction_001, we saw an exciting turn of events! 
+
+- **Winner:** Bidder B2 has emerged victorious with a bid of **$0.25**.
+- **Clearing Price:** The item sold for **$0.1913**, which is the second-highest bid.
+  
+**Bid Summary:**  
+- B1 bid **$0.1855** but did not win.  
+- B2's bid of **$0.25** secured the top spot.  
+- B3 bid **$0.1913**, just matched the clearing price. 
+
+**Payoff Analysis:**  
+- B1 received a payoff of **$0.00** as they didn't win.
+- B2 achieved a payoff of **$0.0542**, calculated by the difference between their value and the clearing price. 
+- B3 also ended up with a payoff of **$0.00**.
+
+Overall, a compelling round that highlighted B2's aggressive bidding strategy!
+
+Auctioneer Summary (Round 16):
+### ROUND 16 Commentary
+
+In Round 16 of the auction, the winner is bidder **B2** with a bid of **$0.58**. The clearing price, which is the price at which the item is sold, is set at **$0.3697**. This is the second-highest bid, submitted by **B3**.
+
+- **B1** submitted the lowest bid at **$0.1596**, resulting in no payoff.
+- **B2** has a payoff of approximately **$0.1907** after winning, as their value is higher than the clearing price.
+- **B3**, despite bidding the clearing price, also receives no payoff.
+
+Overall, the auction generated a revenue of **$0.3697**, reflecting the competitive nature of this round.
+
+Auctioneer Summary (Round 17):
+**ROUND 17 Commentary:**
+
+In this round of auction 001, Player B3 has emerged as the winner with a bid of **0.4482**. The clearing price is set at **0.18**, meaning B3 will pay this amount, despite their higher bid. 
+
+Interestingly, both B1 and B2 submitted bids that were significantly lower, at **0.0075** and **0.18** respectively, and as a result, they do not receive any payoffs for this round. 
+
+In terms of value, B1’s valuation was just **0.0093**, B2’s was **0.1673**, while B3 valued the item the highest at **0.5602**. After subtracting the clearing price, B3 secures a payoff of **0.3802**.
+
+In summary, B3’s strategic bidding has not only won them the auction but also translated into a sizable profit after considering the payment.
+
+Auctioneer Summary (Round 18):
+### ROUND 18 Commentary:
+
+In this round of the auction, bidder B3 emerged as the winner with a bid of approximately 0.798. However, since this is a second-price sealed-bid auction, B3 will only pay the second-highest bid, which is 0.58 from bidder B2. 
+
+Overall, B3's valuation was around 0.998, giving them a significant payoff of about 0.418. Meanwhile, bidders B1 and B2 did not win and thus received no payoffs. 
+
+To summarize the outcomes:
+- **Winner:** B3
+- **Clearing Price:** 0.58
+- **Total Revenue:** 0.58
+- **Payoffs:**
+  - B1: 0.0
+  - B2: 0.0
+  - B3: 0.417
+
+This round reflected strategic bidding, particularly from B3, whose higher bid secured the win while being mindful of the final payment based on B2's strong offer.
+
+Auctioneer Summary (Round 19):
+### ROUND 19 Commentary
+
+In Round 19 of our auction, we have a crucial outcome to discuss. The winner, B3, secured the bid with a value of **0.4757** but only had to pay the clearing price of **0.42**. This means B3 enjoyed a payoff of approximately **0.1756**, reflecting the difference between their value and the price paid.
+
+B2 submitted a bid matching the clearing price of **0.42**, yet due to B3's higher bid, they received no payoff. Similarly, B1's bid of **0.1754** fell short compared to B2 and B3, resulting in zero payoff for them as well.
+
+Overall, the auction generated total revenue of **0.42** for this round, with B3 emerging as the successful bidder thanks to their competitive strategy.
+

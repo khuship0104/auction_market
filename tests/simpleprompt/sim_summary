@@ -2,16 +2,16 @@ Running 20 LLM-based auctions...
 
 === LLM Auction Simulation Summary ===
 
-Mean Clearing Price (Revenue): 0.3809
+Mean Clearing Price (Revenue): 0.4249
 
 Mean Utility per Bidder:
-  • B1: 0.1890
-  • B2: 0.0717
-  • B3: 0.0547
+  • B1: 0.0632
+  • B2: 0.0747
+  • B3: 0.1366
 
 Winner Distribution:
-  • B1: 55.0%
-  • B2: 35.0%
-  • B3: 10.0%
+  • B1: 15.0%
+  • B2: 45.0%
+  • B3: 40.0%
 
 ======================================
