@@ -1,0 +1,203 @@
+AUCTION SIMULATION LOG
+============================================================
+
+--- ROUND 0 ---
+B1: bid=0.0546
+  reasoning: Since I have no past rounds to analyze, I will maintain the current shading factor of 0.8, which results in a bid of 0.05464. This bid is below my private value to allow for potential utility maximization while maintaining a conservative approach.
+B2: bid=0.5800
+  reasoning: I'm following the calculator's recommendation of 0.58. This amount is slightly above my private value and allows me to maximize potential utility. Since there are no previous rounds in the history, I have no patterns to analyze, making the recommended bid the optimal choice.
+B3: bid=0.4200
+  reasoning: Following the best response calculator's recommendation of bidding 0.42, as it maximizes my expected utility based on simulations. With no historical data to suggest deviations, this bid aligns with my private value and maintains a strategic approach.
+Winner: B2, Clearing Price: 0.4200
+Summary: In ROUND 0 of the auction, bidder B2 emerged as the winner with a bid of 0.58, securing the item at a clearing price of 0.42. The competition was moderate, as B1 and B3 bid significantly lower, at 0.054 and 0.42 respectively. While B2's bid suggests some shading to secure the win, the other bids appear relatively weak and less aggressive, indicating possibly less interest from B1 and B3. The clearing price is below B2's valuation but well above B1's bid, highlighting a strategic advantage for B2 in this round. Overall, B2’s bid reflects confidence in their value assessment compared to their competitors.
+
+--- ROUND 1 ---
+B1: bid=0.6122
+  reasoning: I chose to keep my current shading factor of 0.8 because I only participated in one round and did not win. Therefore, I did not have enough data to justify decreasing the factor. My bid remains at 0.6122, which reflects the current factor applied to my private value.
+B2: bid=0.1200
+  reasoning: I am slightly lowering my bid below the calculator's recommendation to 0.14 because my past bid of 0.58 was significantly higher than what others bid, resulting in a win. I believe that bidding 0.12 will still ensure a good chance to win while avoiding overpaying based on the previous bidding patterns, particularly since the highest bid from others was only around 0.42.
+B3: bid=0.3000
+  reasoning: The calculator recommends a bid of 0.3, which balances the potential to win against the need to maximize utility. Given my private value, this bid should increase the chances of winning without overpaying compared to previous bids. The competition shows a trend of bidding much higher, and by entering at 0.3, I have an opportunity to win if the second highest bid is below that price.
+Winner: B1, Clearing Price: 0.3000
+Summary: In ROUND 1 of auction_001, bidder B1 secured victory with a bid of approximately 0.612, outpacing competitors B2 and B3, who bid 0.12 and 0.3, respectively. The bidding was competitive at the higher end, particularly for B1, whose bid was significantly closer to their valuation of 0.765 compared to others, suggesting a strong strategic approach. B2's low bid indicates a likely underestimation of their own valuation, while B3’s bid aligns closely with their value, suggesting a more straightforward bidding strategy. The winning bid of 0.3 acts as a competitive clearing price, providing B1 with a payoff indicative of effective bidding strategy relative to the valuations presented.
+
+--- ROUND 2 ---
+B1: bid=0.7145
+  reasoning: I decided to keep my shading factor at 0.8 because I won the last round, indicating my bid was effective against the lower bids from B2 and B3. The fallback bid aligns with my current private value, ensuring I remain competitive while maximizing potential utility.
+B2: bid=0.9500
+  reasoning: I chose to shade my bid slightly below the calculator's recommendation of 0.96 to maximize my utility. The historical data shows that bidding lower can still win while optimizing my payoff. In round 0, my bid of 0.58 won against lower bids, and I aim to leverage this strategy while remaining competitive.
+B3: bid=0.0300
+  reasoning: Based on the bidding history, B1 and B2 tend to bid significantly higher compared to my private value. I will bid lower than the recommendation to potentially win if the others bid high, as I see a pattern of high bids that don't necessarily correlate to true private values.
+Winner: B2, Clearing Price: 0.7145
+Summary: In Round 2 of the auction, Bidder B2 emerged as the winner, submitting a bid of 0.95, which exceeded the second-highest bid of 0.7145 from Bidder B1. The competition was moderate, with B1's bid closely reflecting their valuation of 0.8932 but B2’s significantly higher bid suggests a possible strategy of shading. B2's clearing price of 0.7145 is well below their valuation of 0.9619, indicating a profitable outcome. Overall, this round highlights strategic decision-making, as B2 capitalized on B1’s lower bid without needing to bid at their maximum valuation.
+
+--- ROUND 3 ---
+B1: bid=0.1864
+  reasoning: I chose to maintain the shading factor at 0.8 because I won round 1, indicating I was competitive. However, I lost rounds 0 and 2, suggesting that my bids may have been too low against higher bids. Therefore, I will keep my bid at the fallback bid calculated from my private value, which is 0.1864. This will allow me to remain in contention without overbidding.
+B2: bid=0.4200
+  reasoning: Following the calculator's recommendation of 0.42 aligns with my private value of 0.3935. Additionally, analyzing the history shows that my last bid of 0.95 won but resulted in a high payment. Bidding 0.42 should allow me to win with a reasonable potential utility while minimizing overpayment risk.
+B3: bid=0.9600
+  reasoning: I will follow the calculator's recommendation of bidding 0.96 as it is close to my private value and allows me a good chance to win while maximizing expected utility based on past rounds. Observing previous bids, it appears B1 and B2 tend to bid lower than my maximum value, particularly B1. Given my private value is higher than my calculated value, I want to position myself to capture the auction effectively.
+Winner: B3, Clearing Price: 0.4200
+Summary: In ROUND 3 of the auction, bidder B3 emerged as the winner with a bid of 0.96, significantly higher than the second-highest bid from B2 at 0.42, indicating a competitive bidding atmosphere. B3’s bid suggests a strong strategic advantage as it reflects a true valuation of 0.981, while both B1 and B2 submitted bids below their respective valuations, pointing to possible bid shading. The clearing price of 0.42 is notably less than B3's valuation, which could lead to substantial payoff of 0.561 for the winner, demonstrating the value of aggressive bidding in securing favorable outcomes. Overall, this round illustrated the impact of truthful versus shaded bids and the advantages they confer in competitive settings.
+
+--- ROUND 4 ---
+B1: bid=0.0202
+  reasoning: I decided to maintain my current shading factor of 0.8 because I won the previous round, which indicates that my bidding strategy is effective at this level. My private value is low, so I am submitting a bid of 0.0202, hoping to remain competitive. Maintaining my strategy may help refine it further, but I want to avoid making drastic adjustments after just one win.
+B2: bid=0.5800
+  reasoning: The best response calculator suggests a bid of 0.58, which aligns with my private value. Given my recent history, this bid has successfully won in one out of four rounds, and with my secret value being lower than some others, maintaining this bid appears optimal to secure utility without overbidding.
+B3: bid=0.1300
+  reasoning: I've observed that in the previous rounds, bids from B1 and B2 tend to vary significantly. Since my private value is 0.128, I decided to shade my bid slightly below the calculator's recommendation of 0.14. B2 has been a strong competitor, and by bidding 0.13, I can still win if B1 is passive or bids low, maximizing my expected utility without overspending against B2's likely bids.
+Winner: B2, Clearing Price: 0.1300
+Summary: In ROUND 4 of the auction, participant B2 emerged as the winner with a bid of 0.58, significantly higher than the second-highest bid of 0.13 from B3. The competition was relatively fierce, evidenced by B1's much lower bid of 0.02, which reflects a sizeable gap in perceived value among the bidders. B2's high bid suggests a belief in the item's value, while B1 and B3's bids could indicate either truthful valuations or strategic shading. The clearing price of 0.13 is below B2's valuation of 0.59, allowing for a profitable payoff, highlighting B2's effective strategy in identifying their competitive advantage in this round.
+
+--- ROUND 5 ---
+B1: bid=0.0138
+  reasoning: I chose to keep my current shading factor of 0.8 since my win rate is 20%. Adjusting down could lead to lower bids which may not result in winning. My bid of 0.0138 is still below my private value of 0.0172, and based on past rounds, this provides a reasonable chance to compete. Although I won one round, the recent performance suggests keeping the factor constant for now.
+B2: bid=0.2900
+  reasoning: I am slightly shading my bid below the calculator's recommendation of 0.3 to increase my utility. In the past rounds, I have won with bids that were lower than the maximum bids placed by others. Given my private value of 0.3511, bidding 0.29 allows me to potentially win while minimizing the price I pay based on competitors' previous bids.
+B3: bid=0.3000
+  reasoning: I will shade my bid slightly lower than the recommended bid of 0.42 to increase my chances of winning without significantly affecting my potential utility. Given the bidding history, my previous higher bids did not yield a win, indicating I may be overbidding relative to competitors. A bid of 0.3 balances the chance of winning while ensuring a positive expected utility.
+Winner: B3, Clearing Price: 0.2900
+Summary: In ROUND 5 of the auction, bidder B3 emerged victorious with a bid of 0.30, just exceeding B2’s maximum bid of 0.29, leading to a clearing price of 0.29. The competition was quite intense, as all bidders were close in their valuations, but B3's bid suggests a strategic advantage likely based on a strong confidence in their valuation of 0.369. B1's low bid indicates a significantly shaded strategy, as their apparent valuation was less competitive. Overall, B3's successful bid highlights a keen understanding of the auction dynamics, maximizing their payoff while staying below their true value.
+
+--- ROUND 6 ---
+B1: bid=0.1436
+  reasoning: I decided to keep my shading factor at 0.8 since I had one win and multiple losses in the past rounds. My win came with a higher bid than my previous attempts which were too low to win, indicating that my bid should remain as is to maintain competitiveness without risking low utility. The fallback bid of 0.1436 should be suitable considering my private value of 0.1795.
+B2: bid=0.5800
+  reasoning: Following the calculator's recommendation since it provided a solid expected utility. The bidding history shows that my previous bid of 0.58 won against lower bids while allowing me to gain favorable outcomes. This amount aligns with my private value, maximizing the chance of winning without overbidding.
+B3: bid=0.5800
+  reasoning: Following the best response calculator's recommendation, which suggests a bid of 0.58. This is within my private value and aligns with patterns observed in past rounds where higher bids tend to win. Given my win rate so far and the current bidding trends, matching this recommended bid could maximize my chances of winning while keeping potential utility in mind.
+Winner: B2, Clearing Price: 0.5800
+Summary: In ROUND 6 of the auction, bidder B2 emerged as the winner with a bid of 0.58, which matched the highest bid but resulted in a second-price setting at the same level. The bidding was fairly competitive, particularly with B3 also bidding 0.58, indicating strong interest in the item. B1's significantly lower bid of 0.14 suggests a more shaded approach, possibly reflecting a cautious valuation. Compared to their individual valuations, B2 managed a slight profit while B3 received no payoff; this demonstrates a strategic advantage for B2 in identifying the actual market price relative to their value.
+
+--- ROUND 7 ---
+B1: bid=0.6506
+  reasoning: I chose to keep my shading factor at 0.8 because I won one out of the seven rounds but faced multiple losses, indicating that my bids might need further adjustment. Thus, I will maintain my bid at the fallback bid of 0.6506, which is 80% of my private value (0.8133). I wanted to remain competitive while not overbidding, given that I have mainly lost recent rounds.
+B2: bid=0.9600
+  reasoning: The calculator recommends a bid of 0.96, which aligns well with my private value of 0.9726. Given my past success in winning with similar bids and that B1 tends to bid lower, I am confident this strategy maximizes my expected utility.
+B3: bid=0.2500
+  reasoning: Given my private value of 0.3088 and the recommendation of 0.3, I decided to slightly shade my bid to 0.25. Historically, bids from my competitors like B2 have often been significantly high (as seen with their bids around 0.58) which often leads to me losing. By shading my bid, I aim to both increase my winning potential by not overpaying and potentially pay based on the second highest bid while ensuring I still have a decent chance of winning.
+Winner: B2, Clearing Price: 0.6506
+Summary: In ROUND 7 of the auction, bidder B2 emerged victorious with a bid of 0.96, significantly higher than B1's offer of 0.6506, which became the clearing price. The competition was moderately intense, as B1's bid was close to the clearing price but ultimately not enough to win. B2's strategy appears to be a bit shaded, given their valuation of 0.9726, while B1 seems to have either understated their valuation or played cautiously. Overall, the clearing price is well below B2's valuation, indicating potential strategic undervaluation by the other bidders and suggesting that bidders may be holding back in anticipation of future rounds.
+
+--- ROUND 8 ---
+B1: bid=0.0922
+  reasoning: I did not win the last few rounds and my wins have been sporadic. Therefore, I will maintain my current shading factor of 0.8 to keep my bid within a reasonable limit. My fallback bid is still valid, and I believe it aligns with my private value considering past performance.
+B2: bid=0.7500
+  reasoning: The best response calculator recommends a bid of 0.75, which is slightly below my private value. Given my recent winning rounds, it seems that competitive bids have varied widely. This bid aligns with the calculator's suggestion to optimize my expected utility while staying below my max value to avoid overpaying.
+B3: bid=0.2500
+  reasoning: The best response calculator suggests a bid of 0.25, which aligns with the highest bid I can afford while maximizing potential utility. Given my past results, it seems that B2 often bids high, making it risky to bid lower. I believe following the recommendation will give me a competitive chance while maintaining my utility.
+Winner: B2, Clearing Price: 0.2500
+Summary: In ROUND 8 of the auction, bidder B2 won with a bid of 0.75, significantly outpacing the other bids from B1 and B3, which were 0.092 and 0.25 respectively. The competitive nature of the bidding was low, as B2's winning bid was well above both the clearing price of 0.25 and the next highest bid. This suggests that B2 may have submitted a truthful bid reflecting their valuation, while B1 and B3's bids appear to be quite shaded compared to their respective valuations. The clearing price aligns closely with B3's expected valuation, highlighting a potential strategic insight that could benefit bidders in future rounds by allowing for more competitive bidding based on actual valuations.
+
+--- ROUND 9 ---
+B1: bid=0.7097
+  reasoning: I used the current shading factor of 0.8 to calculate my bid as 0.7097. Considering my recent performance, I have won once and lost multiple times, indicating that my bids may be too low, especially against the other bidders who have consistently bid higher. Since adjusting the factor downward could risk my chance of winning, I opted to maintain the current factor. Thus, I believe this is a reasonable bid to potentially secure a win while remaining cautious.
+B2: bid=0.5700
+  reasoning: I am slightly reducing my bid based on the calculator's recommendation while considering the bidding history. My private value is 0.5916. In previous rounds where I won, my bids have been either at or slightly below 0.58. Bidding 0.57 keeps me competitive while allowing for the potential of winning at a lower cost if competitors bid similarly or lower.
+B3: bid=0.3000
+  reasoning: I believe that B2 has frequently bid higher in past rounds, often around 0.58, and B1 has shown variability in their bids. By bidding 0.3, I'm testing a lower bid that still allows for a chance to win against B1 while ensuring my bid remains below my private value. If both opponents submit their usual high bids, this strategic deviation from the calculator's recommendation could maximize my chances without risking overspending.
+Winner: B1, Clearing Price: 0.5700
+Summary: In ROUND 9 of the auction, bidder B1 emerged as the winner with a bid of approximately 0.71, securing the item at a clearing price of 0.57. The competitive landscape showed that B2 bid exactly 0.57, while B3's bid was significantly lower at 0.3, indicating a clear gap in bidding strategy. B1's bid seems to reflect a shaded strategy given its high valuation of nearly 0.89, while B2's bid matches the clearing price, suggesting a more honest approach. Overall, the revenue generated aligns closely with the competitive bids, and B1’s substantial payoff illustrates the effectiveness of their strategy in capturing value.
+
+--- ROUND 10 ---
+B1: bid=0.2035
+  reasoning: I chose to keep my shading factor at 0.8 because I won the last round and had decent payoffs previously. My bid of 0.2034 is based on this factor. While I did lose several rounds recently, my performance overall has been stable. Therefore, a slight adjustment in strategy isn't necessary at this time.
+B2: bid=0.3000
+  reasoning: The recommended bid of 0.3 closely aligns with my private value and offers a potential utility gain. Previous rounds indicate my higher bids often led to victories, but competitors seem to typically bid lower. Bidding at this level allows me to potentially win without overpaying.
+B3: bid=0.3100
+  reasoning: I am slightly increasing my bid above the calculator's recommendation of 0.3 to potentially outbid B1 and B2, who have shown high aggressive bids in previous rounds. Given my private value of 0.3638, this bid allows for a reasonable chance of winning while still ensuring some utility in case of a win.
+Winner: B3, Clearing Price: 0.3000
+Summary: In ROUND 10 of the auction, bidder B3 emerged as the winner with a bid of 0.31, slightly above the second-highest bid of 0.3 from bidder B2. The competition was quite intense, as all bidders were close, with bids reflecting a strategic approach. B1's bid of 0.203 suggests a more conservative stance compared to B3 and B2, indicating some shading in their bidding. The clearing price of 0.3 sits below B3's valuation of 0.364, highlighting that B3 recognized value while outmaneuvering competitors, which could point to a strong understanding of the auction dynamics.
+
+--- ROUND 11 ---
+B1: bid=0.2268
+  reasoning: I am continuing with the current shading factor of 0.8 because my last two bids were quite close to my private value, and I won one of those rounds. The historical data shows some wins mixed with losses, indicating that a lower factor may not be beneficial for my strategy at this moment. Thus, my bid remains at 0.2268.
+B2: bid=0.4200
+  reasoning: The recommendation from the calculator is to bid 0.42, which aligns with my past bidding patterns. The previous rounds show varying results, but 0.42 has secured wins in the past without exceeding my private value significantly. This bid also allows me to capture potential utility without overcommitting.
+B3: bid=0.1300
+  reasoning: Following the best-response calculator's recommendation, as it provides the highest expected utility of winning while considering my private value. Previous rounds show B2 often bids higher, and bidding at the suggested amount allows me to compete effectively.
+Winner: B2, Clearing Price: 0.2268
+Summary: In ROUND 11 of the auction, bidder B2 emerged victorious with a bid of 0.42, significantly higher than the second-highest bid from B1 at 0.2268. This indicates a competitive bidding atmosphere, although B3's lower bid of 0.13 suggests a lack of competitiveness on their part. B2's bid appears to be more aggressive than their valuation of 0.4388, hinting at a potential shading strategy, while B1’s bid closely matched the clearing price, signaling a truthful bidding approach. The final clearing price of 0.2268 is well below B2’s valuation, allowing them a substantial payoff of 0.212, indicating that strategic bidding can lead to profitable outcomes even when competitors are involved.
+
+--- ROUND 12 ---
+B1: bid=0.4561
+  reasoning: I chose to maintain my shading factor at 0.8 because I've had mixed results in past rounds: I won in round 1 and 9, but lost several other rounds. Increasing the factor might result in fewer wins. Therefore, I'll stick with the current bid of 0.4561, which corresponds to my factor of 0.8, to balance between competing effectively and maximizing my utility.
+B2: bid=0.3000
+  reasoning: Following the best response calculator's recommendation of 0.3. This aligns with the trend of lowering bids to avoid overpaying due to high second bids in recent history, while still being competitive.
+B3: bid=0.3000
+  reasoning: Based on the calculator's recommendation, 0.3 is a strategic bid considering my private value. Historical data shows that my previous bids have varied but consistently show that B2 often bids higher. By matching the recommendation, I aim to balance my chances of winning while ensuring any utility generated remains positive.
+Winner: B1, Clearing Price: 0.3000
+Summary: In ROUND 12 of the auction, bidder B1 emerged as the winner with a bid of 0.456, securing the item at a clearing price of 0.3. The competition was notable, as both B2 and B3 placed bids equal to the clearing price, indicating a tight race among the bidders. B1's bid seems partially shaded, as it exceeds the clearing price but is below their true valuation of 0.57, suggesting a strategic approach to maximize payoff while still ensuring a win. Overall, the price of 0.3 is significantly lower than B1’s valuation, reflecting an effective strategy and a willingness to gamble on winning at a lower price point.
+
+--- ROUND 13 ---
+B1: bid=0.2396
+  reasoning: I decided to keep my shading factor at 0.8 since my recent performance has been mixed with 4 wins out of 13 rounds. The recent win (round 12) indicates that my current strategy may still be effective. I will submit a bid of 0.2396, which is 80% of my private value (0.2995). This bid seems competitive, given that the average winning bid in previous rounds has been higher. If I do not win this round, I will consider increasing the shading factor in the next round.
+B2: bid=0.9600
+  reasoning: Following the best response calculator's recommendation as it suggests a bid of 0.96 with an expected utility of 0.259. Previous rounds indicate that my higher bids have often led to wins. Given my private value of approximately 0.908, bidding at this level maximizes my chance to win while securing positive utility.
+B3: bid=0.8500
+  reasoning: Following the calculator's recommendation of 0.85 maximizes my expected utility since my private value is 0.8847. This bid also positions me competitively against observed bids, particularly given that past rounds show my opponents often bidding below this range. This strategy allows me to potentially win while minimizing my payment to the second-highest bid.
+Winner: B2, Clearing Price: 0.8500
+Summary: In ROUND 13 of the auction, bidder B2 emerged as the winner with a bid of 0.96, beating B3’s bid of 0.85 and securing the item at a clearing price of 0.85. The bidding was fairly competitive, with B1 being notably less aggressive, submitting a bid of only 0.24. B2’s bid appears somewhat shaded, as it significantly exceeds both the clearing price and B3's bid yet remains below their own valuation. This suggests that B2 was strategically aiming for a high payoff, capturing an advantage while still paying less than their maximum willingness to pay. Overall, it reflects a calculated approach to balance winning with revenue generation.
+
+--- ROUND 14 ---
+B1: bid=0.7727
+  reasoning: I am keeping the current shading factor of 0.8 because I won in 2 out of the last 5 rounds, indicating some competitive success. My most recent win had a lower bid than several competitors, suggesting my shading factor might still be appropriate. Therefore, I will submit my calculated bid of 0.7727 based on my private value.
+B2: bid=0.0500
+  reasoning: The best response calculator recommends a bid of 0.05, which is below my private value of 0.070. Analyzing the history shows that competitors often bid higher than this amount, which means if I bid 0.05, I could potentially win without overpaying significantly. This should maximize my expected utility in this round.
+B3: bid=0.3000
+  reasoning: Following the calculator's recommendation of 0.3 optimally balances my winning chance against my private value. Given the history, B1 tends to bid higher, while B2 has consistently bid around 0.58. Bidding 0.3 might secure second place, optimizing my expected utility.
+Winner: B1, Clearing Price: 0.3000
+Summary: In Round 14 of auction 001, bidder B1 emerged as the winner with a bid of approximately 0.773, securing the item at a clearing price of 0.3. The competitive landscape was quite stark, as B2 and B3 placed significantly lower bids of 0.05 and 0.3, respectively, indicating that B1 effectively assessed the auction's value compared to their own maximum willingness to pay. B1's bid appears somewhat shaded, positioned well above the clearing price while still yielding a substantial payoff of about 0.666. This suggests B1 strategically valued their information and anticipated competition, while B2 and B3's minimal bids reflect either lack of interest or confidence in the item's worth.
+
+--- ROUND 15 ---
+B1: bid=0.3863
+  reasoning: I have adjusted my bid using the current shading factor of 0.8, which results in a bid of 0.3863. Although I have had some wins, my recent losses indicate that the competition is strong, prompting me to keep my shading factor the same for consistent bidding. I might consider adjusting upwards if I continue to lose.
+B2: bid=0.7500
+  reasoning: The best-response calculator recommends a bid of 0.75 which is aligned with my private value of 0.7015520255441943. Analyzing historical bids shows that my bids of 0.75 have been successful against lower bids from other bidders like B1 and B3, especially in earlier rounds. Bidding at 0.75 will maximize potential utility while being competitive against observed bids in previous rounds.
+B3: bid=0.9000
+  reasoning: I chose to bid 0.9, slightly lower than the recommended 0.96, as it allows me to still potentially win while maximizing expected utility. My recent history shows I have been able to win bids with lower amounts than 0.96, and I want to be cautious given the competition from B2, who frequently bids high.
+Winner: B3, Clearing Price: 0.7500
+Summary: In ROUND 15 of the auction, player B3 emerged as the winner by submitting the highest bid of 0.9, which was significantly above the clearing price of 0.75. The competition was quite intense, as both B1 and B2 also bid closely, with their bids at 0.386 and 0.75, respectively. B2, although placing the maximum bid equal to the clearing price, didn’t win, indicating potentially shaded bidding strategies, while B3's bid suggests a strong belief in the underlying value. Notably, the clearing price is well below all participants' valuations, which may indicate an opportunity for bidders to consider more aggressive bids in future rounds.
+
+--- ROUND 16 ---
+B1: bid=0.1095
+  reasoning: I have analyzed my past performance and realized I won 7 out of 16 rounds, which indicates some level of competitiveness in my bidding. However, my last few bids have not won and my performance has been inconsistent. Since I won with a significant bid in round 1 and again in round 14 but lost several in between, I will maintain my current shading factor of 0.8. This approach still allows me to bid below my private value while staying competitive. My fallback bid remains at 0.10949, which is reasonable given my private value.
+B2: bid=0.9600
+  reasoning: The best-response calculator recommends a bid of 0.96, which has yielded a reasonable expected utility in the simulations. Given my private value is close to this amount, and observing recent rounds where higher bids have been successful, I aim to follow the recommendation while staying competitive against others who have previously bid higher.
+B3: bid=0.2500
+  reasoning: Following the calculator's recommendation as it suggests the highest expected utility (0.0073) within my private value constraints. Historical bids from competitors like B2 often exceed my private value, and bidding at 0.25 might edge out B1 and secure a win while minimizing the chance of overbidding.
+Winner: B2, Clearing Price: 0.2500
+Summary: In ROUND 16 of the auction, bidder B2 emerged as the winner with a bid of 0.96, significantly outpacing the second-highest bid of 0.25 from B3. The bidding was quite competitive, with B1 placing a bid of 0.11, which did not come close to winning. B2's high bid indicates a strategic approach to securing the item, though it suggests some shading, given the clearing price of 0.25 is substantially lower than B2’s valuation of approximately 0.97. Overall, B2’s payoff was maximized due to their winning bid being well above the clearing price, reflecting a strong valuation awareness and bidding strategy.
+
+--- ROUND 17 ---
+B1: bid=0.4119
+  reasoning: I am keeping the shading factor at 0.8 as my recent results have been mixed with 5 wins and 12 losses. Notably, my wins have been against lower bids, and the pattern suggests that I still need to be conservative. Therefore, I am submitting a bid of 0.4119, which reflects the current shading factor based on my private value.
+B2: bid=0.5500
+  reasoning: The best response calculator suggests a bid of 0.55, which aligns closely with my private value. Past rounds show variability in competitor bids, but they often bid in the range below my private value. To maximize my chances while managing risk, I will follow the recommendation, as it provides a reasonable expected utility.
+B3: bid=0.7500
+  reasoning: Following the calculator's recommendation to bid 0.75, as it suggests optimal utility given my private value. Previous bidding patterns show B2 has frequently bid high, but I've had success with slightly above their typical bid range.
+Winner: B3, Clearing Price: 0.5500
+Summary: In ROUND 17 of the auction, bidder B3 emerged as the winner with a bid of 0.75, securing the item at a clearing price of 0.55, which is their second-highest bid reflecting B2's bid. The competition was quite intense, as B2's bid matched the clearing price and B1's bid, though lower, was still significant. However, all bids appear to be somewhat shaded, particularly B1's, which is notably below their own valuation. The winning price of 0.55 is well below B3's value of 0.86, indicating that they secured a valuable item at a good deal, showcasing the strategic advantage of understanding one's true valuation while still being competitive.
+
+--- ROUND 18 ---
+B1: bid=0.6360
+  reasoning: I decided to keep my current shading factor of 0.8 because I am not consistently winning enough rounds to justify a decrease. My recent wins (2 out of the last 6 rounds) have not been significantly rewarding, and there's room to improve. My bid of 0.636 is calculated based on my private value of 0.795, and I believe it places me competitively without risking too much. I will continue monitoring my performance for a potential adjustment in future rounds.
+B2: bid=0.5800
+  reasoning: The best-response calculator recommends a bid of 0.58, which is slightly below my private value of 0.55. Given my past performance, I have won rounds with this bid and observed that B1 often bids higher, but not consistently above this value. This bid gives me a fair chance of winning while ensuring a potential utility if the second-highest bid remains below this amount.
+B3: bid=0.9500
+  reasoning: I am increasing my bid slightly above the calculator's recommendation (0.96) in hopes to capture a potential win against observed patterns where B2 frequently bids high and I can still gain utility given my private value is slightly below this bid.
+Winner: B3, Clearing Price: 0.6360
+Summary: In ROUND 18 of the auction, bidder B3 emerged as the winner with a bid of 0.95, successfully securing the item despite their payment being the second-highest bid at the clearing price of 0.636. The competition was quite strong, as B1 and B2 placed bids of 0.636 and 0.58 respectively, indicating a closely contested auction. B3's relatively high bid suggests that it might be somewhat shaded, as their valuation of 0.963 is significantly higher than the final price. Overall, bidders appear to have engaged in strategic bidding, with B3's approach effectively leveraging their valuation to achieve a positive payoff while still benefiting from the second-price format.
+
+--- ROUND 19 ---
+B1: bid=0.2258
+  reasoning: I decided to keep my shading factor at 0.8 because I won one out of three recent rounds, and my past performance indicates that my initial strategy is still viable. The bid remains the same, calculated based on my private value and current shading factor, as I believe this will give me a balanced chance to win while maximizing my payoff.
+B2: bid=0.4200
+  reasoning: The calculator recommends a bid of 0.42, which is close to my private value and offers a small expected utility of 0.026. Given the fluctuating bids from competitors, particularly B1's higher bids and B3's varied strategy, I will align with this recommendation. It balances my chance of winning while minimizing the potential payment reflecting the second-highest bid, helping maximize my expected utility.
+B3: bid=0.2700
+  reasoning: My private value is 0.2699, and bidding my true value ensures I don't overpay while maximizing my chances of winning. The calculator suggested a bid of 0.3, but I see that my value already dictates my optimal bid. Bidding higher could lead to a negative utility if I win, while lower bids risk losing. Adjusting my bid to my private value is a balanced strategy based on the observed bids and outcomes.
+Winner: B2, Clearing Price: 0.2700
+Summary: In Round 19 of our auction, B2 emerged as the winner with a bid of 0.42, outbidding B1 and B3. The competitive nature of the bidding was evident, as B1 bid 0.2257 and B3 bid right at the clearing price of 0.27, demonstrating a solid understanding of their values. B2's bid appears to be slightly shaded, given their valuation of 0.4037, while B1 and B3's bids are well below their respective valuations, indicating a more conservative approach. Overall, the clearing price is notably lower than both B1 and B2's valuations, suggesting room for more aggressive bidding strategies in future rounds.
+

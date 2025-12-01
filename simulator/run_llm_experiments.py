@@ -33,11 +33,43 @@ def run_llm_experiments(
         value_distribution="uniform_0_1",
     )
 
-    bidders = [
-        HeuristicBidderAgent("B1", shading_factor=0.8, use_llm=use_llm_for_heuristics),
-        StrategicBidderAgent("B2", use_llm=True),
-        HeuristicBidderAgent("B3", shading_factor=0.7, use_llm=use_llm_for_heuristics),
-    ]
+    # setup 5 different scenarios
+    scenario = 5 # default is 1
+    if scenario == 1: # default
+        bidders = [
+            HeuristicBidderAgent("B1", shading_factor=0.8, use_llm=use_llm_for_heuristics),
+            StrategicBidderAgent("B2", use_llm=True),
+            HeuristicBidderAgent("B3", shading_factor=0.7, use_llm=use_llm_for_heuristics),
+        ]
+        output_file = "scenario_logs/scenario_1_log.txt"
+    elif scenario == 2: # all heuristic
+        bidders = [
+            HeuristicBidderAgent("B1", shading_factor=0.9, use_llm=use_llm_for_heuristics),
+            HeuristicBidderAgent("B2", shading_factor=0.8, use_llm=use_llm_for_heuristics),
+            HeuristicBidderAgent("B3", shading_factor=0.7, use_llm=use_llm_for_heuristics),
+        ]
+        output_file = "scenario_logs/scenario_2_log.txt"
+    elif scenario == 3: # default, with low shading factors
+        bidders = [
+            HeuristicBidderAgent("B1", shading_factor=0.7, use_llm=use_llm_for_heuristics),
+            StrategicBidderAgent("B2", use_llm=True),
+            HeuristicBidderAgent("B3", shading_factor=0.7, use_llm=use_llm_for_heuristics),
+        ]
+        output_file = "scenario_logs/scenario_3_log.txt"
+    elif scenario == 4: # all strategic
+        bidders = [
+            StrategicBidderAgent("B1", use_llm=True),
+            StrategicBidderAgent("B2", use_llm=True),
+            StrategicBidderAgent("B3", use_llm=True),
+        ] 
+        output_file = "scenario_logs/scenario_4_log.txt"
+    else: # 2 strategic, 1 heuristic
+        bidders = [
+            HeuristicBidderAgent("B1", shading_factor=0.8, use_llm=use_llm_for_heuristics),
+            StrategicBidderAgent("B2", use_llm=True),
+            StrategicBidderAgent("B3", use_llm=True),
+        ]
+        output_file = "scenario_logs/scenario_5_log.txt"
 
     auctioneer = AuctioneerAgent(config=config)
 
@@ -50,7 +82,7 @@ def run_llm_experiments(
     # --- 3) Main simulation loop ---
 
     for _ in range(num_rounds):
-        outcome, bid_responses = auctioneer.run_round(bidders)
+        outcome, bid_responses = auctioneer.run_round(bidders, output_file)
 
         # revenue in second-price = clearing_price
         revenues.append(outcome.clearing_price)
