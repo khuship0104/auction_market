@@ -40,21 +40,8 @@ class HeuristicBidderAgent(BaseAgent):
 
         bidder_id: "{self.bidder_id}"
         private_value: {request.private_value}
-        - current_shading_factor: {self.shading_factor}
-        - fallback_bid (using current factor): {fallback_bid}
-
-        Analyze carefully the history of past rounds, with winner_id and payoffs included:
-        {history_text}
-
-        Based on your performance in past rounds (wins, losses, payoffs), decide:
-        1. Should you adjust your shading factor?
-        2. What bid should you submit?
-        3. Explain your reasoning for both decisions.
-
-        Return JSON with:
-        - "bid": your bid amount
-        - "new_shading_factor": your adjusted factor (or keep current if no change)
-        - "reasoning": explanation of your decision
+        suggested_fallback_bid: {fallback_bid}
+        history: "{history_text}"
         """.strip()
 
     def get_bid(self, request: BidRequest) -> BidResponse:

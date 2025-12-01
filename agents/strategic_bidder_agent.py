@@ -32,19 +32,19 @@ class StrategicBidderAgent(BaseAgent):
             history_text = "No history available."
 
         return f"""
-{self._shared}
+            {self._shared}
 
-{self._persona}
+            {self._persona}
 
-Information:
-- bidder_id: "{self.bidder_id}"
-- private_value: {request.private_value}
-- best_response_calculator_recommendation:
-    - best_bid: {recommended_bid}
-    - expected_utility: {expected_utility}
+            Information:
+            - bidder_id: "{self.bidder_id}"
+            - private_value: {request.private_value}
+            - best_response_calculator_recommendation:
+                - best_bid: {recommended_bid}
+                - expected_utility: {expected_utility}
 
-history: "{history_text}"
-""".strip()
+            history: "{history_text}"
+            """.strip()
 
     def get_bid(self, request: BidRequest) -> BidResponse:
         # Tool-based best response (pure Python)
