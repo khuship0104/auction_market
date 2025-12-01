@@ -5,6 +5,7 @@ from __future__ import annotations
 from core.models import BidRequest, BidResponse
 from .base_agent import BaseAgent
 from tools.best_response import approximate_best_response
+import json
 
 
 class StrategicBidderAgent(BaseAgent):
@@ -25,7 +26,10 @@ class StrategicBidderAgent(BaseAgent):
         self._persona = self.load_prompt_template("strategic_bidder_prompt.txt")
 
     def build_prompt(self, request: BidRequest, recommended_bid: float, expected_utility: float) -> str:
-        history_text = request.history_summary if hasattr(request, "history_summary") else "No history provided."
+        if request.history:
+            history_text = json.dumps(request.history, indent=2)
+        else:
+            history_text = "No history available."
 
         return f"""
 {self._shared}

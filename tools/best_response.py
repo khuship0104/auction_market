@@ -13,7 +13,7 @@ def approximate_best_response(private_value: float, num_grid_points: int = 101) 
     rng = random.Random(0)  # fixed seed for reproducibility
 
     player_id = "me"
-    NUM_OPPONENTS = 1         # assume a 2-bidder auction (you + 1 opponent)
+    NUM_OPPONENTS = 2         # assume a 2-bidder auction (you + 2 opponents)
     SAMPLES_PER_BID = 500     # Monte Carlo samples per candidate bid
 
     # Grid of candidate bids in [0, 1]

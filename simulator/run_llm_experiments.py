@@ -9,6 +9,8 @@ from core.models import AuctionConfig, SimulationSummary
 from agents.heuristic_bidder_agent import HeuristicBidderAgent
 from agents.strategic_bidder_agent import StrategicBidderAgent
 from agents.auctioneer_agent import AuctioneerAgent
+from viz.plots import run_all_plots
+
 
 
 def run_llm_experiments(
@@ -34,7 +36,7 @@ def run_llm_experiments(
     bidders = [
         HeuristicBidderAgent("B1", shading_factor=0.8, use_llm=use_llm_for_heuristics),
         StrategicBidderAgent("B2", use_llm=True),
-        HeuristicBidderAgent("B3", shading_factor=0.9, use_llm=use_llm_for_heuristics),
+        HeuristicBidderAgent("B3", shading_factor=0.7, use_llm=use_llm_for_heuristics),
     ]
 
     auctioneer = AuctioneerAgent(config=config)
@@ -58,7 +60,7 @@ def run_llm_experiments(
         wins_count[winner] += 1
 
         # accumulate payoffs per bidder
-        for bidder_id, u in outcome.values.items():
+        for bidder_id, u in outcome.payoffs.items():
             total_utility[bidder_id] += u
 
     # --- 4) Aggregate stats into SimulationSummary ---
@@ -80,6 +82,7 @@ def run_llm_experiments(
         mean_utility_per_bidder=mean_utility_per_bidder,
         distribution_of_winners=distribution_of_winners,
     )
+    run_all_plots(auctioneer.bid_history, summary)
 
     return summary
 
@@ -94,7 +97,7 @@ def main():
 
     summary = run_llm_experiments(
         num_rounds=num_rounds,
-        use_llm_for_heuristics=False,
+        use_llm_for_heuristics=True,
     )
 
     # Header
