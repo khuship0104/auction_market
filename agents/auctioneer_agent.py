@@ -130,6 +130,15 @@ class AuctioneerAgent(BaseAgent):
 
     Here is the full AuctionOutcome object:
     {outcome}
+
+    Write a concise, human-readable 2–4 sentence analysis including:
+    - The winner and why they won
+    - How competitive the bidding was
+    - Whether bids appear truthful or shaded
+    - How the price compares to valuations
+    - Any notable strategic insights
+
+    Avoid JSON. Produce natural language only.
     """
 
         try:
