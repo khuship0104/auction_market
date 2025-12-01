@@ -64,7 +64,7 @@ class AuctioneerAgent(BaseAgent):
                 bids[bidder_id] = bid_response.bid
 
                 # Optional: print bid and reasoning for debugging for strategic agents
-                debug_response = True
+                debug_response = False
                 if bidder.name.startswith("Strat") and debug_response:
                     print(f"Strategic Agent {bidder_id}] Bid: {bid_response.bid}")
                     #print(f"  Reasoning: {bid_response.reasoning}")
