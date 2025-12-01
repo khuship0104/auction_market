@@ -33,7 +33,7 @@ class AuctioneerAgent(BaseAgent):
         """
         raise NotImplementedError("Auctioneer does not implement get_bid.")
 
-    def run_round(self, bidders: Sequence[BaseAgent]) -> AuctionOutcome:
+    def run_round(self, bidders: Sequence[BaseAgent]) -> tuple[AuctionOutcome, dict[str, BidResponse]]:
         """
         Run a single sealed-bid second-price auction round.
         """
@@ -41,11 +41,11 @@ class AuctioneerAgent(BaseAgent):
         values: dict[str, float] = {}
 
         current_round = self._round_counter
-
+        bid_responses: dict[str, BidResponse] = {}
+        
         # 1) Sample private values and get bids
         for bidder in bidders:
             bidder_id = getattr(bidder, "bidder_id", bidder.name)
-            bid_responses: dict[str, BidResponse] = {}
             v = sample_value_uniform_0_1()
             values[bidder_id] = v
 
@@ -63,7 +63,7 @@ class AuctioneerAgent(BaseAgent):
                 bid_responses[bidder_id] = bid_response
                 bids[bidder_id] = bid_response.bid
 
-                # Optional: print bid and reasoning for debugging for strategic agents
+                # Optional: print bid and reasoning for debugging agents
                 debug_response = False
                 if bidder.name.startswith("Strat") and debug_response:
                     print(f"Strategic Agent {bidder_id}] Bid: {bid_response.bid}")
