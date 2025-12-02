@@ -34,14 +34,14 @@ def run_llm_experiments(
     )
 
     # setup 5 different scenarios
-    scenario = 5 # default is 1
+    scenario = 1 # default is 1
     if scenario == 1: # default
         bidders = [
             HeuristicBidderAgent("B1", shading_factor=0.8, use_llm=use_llm_for_heuristics),
             StrategicBidderAgent("B2", use_llm=True),
             HeuristicBidderAgent("B3", shading_factor=0.7, use_llm=use_llm_for_heuristics),
         ]
-        output_file = "scenario_logs/scenario_1_log.txt"
+        #output_file = "scenario_logs/scenario_1_log.txt"
     elif scenario == 2: # all heuristic
         bidders = [
             HeuristicBidderAgent("B1", shading_factor=0.9, use_llm=use_llm_for_heuristics),
