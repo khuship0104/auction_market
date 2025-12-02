@@ -117,7 +117,3 @@
     
     This ensures the LLM is not just guessing, but is grounded in real calculations.
 
-# WHAT'S LEFT TO DO
-    1. Improve plots/visualizations?
-    2. Finish jupyter notebook
-
